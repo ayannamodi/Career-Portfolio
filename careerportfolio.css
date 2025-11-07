@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* FIX 1: Reduced Section Spacing */
 .content-section {
-    padding: 80px 0; /* Reduced from 100px */
+    padding: 80px 0; /* Reduced from 100px to shorten gap between Home and Research */
     border-bottom: 1px solid #c8d9e8;
 }
 
@@ -91,10 +91,10 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--secondary-color-light); /* Lighter blue for alternating sections */
 }
 
-/* Home/Hero Section */
+/* Home/Hero Section - Adjusted internal padding slightly */
 #home {
     min-height: 90vh;
-    padding: 100px 0; /* Reduced from 120px */
+    padding: 100px 0; /* Reduced from 120px to shorten section height */
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, var(--secondary-color-medium) 0%, #d8edff 100%); 
@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 20px;
 }
 
-/* FIX 2: Research Section Text Alignment/Spacing */
+/* FIX 2: Research Text Layout and Spacing */
 .research-text {
     flex: 2;
 }
@@ -228,6 +228,32 @@ h1, h2, h3, h4, h5, h6 {
 .padded-list li {
     padding: 10px 0; 
     border-bottom: 1px dashed #eee;
+}
+
+/* Awards Icons Grid Sizing */
+.awards-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.awards-icons-grid img {
+    width: 100%; /* Ensures they fill the grid cell */
+    height: 100px; /* Fixed height for uniform appearance */
+    object-fit: contain; /* Ensures images fit without stretching */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid white;
+    transition: transform 0.3s;
+}
+
+/* Research Image (Graph) Sizing */
+#research .image-box img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures consistent sizing */
 }
 
 /* Final Reveal Button Text */
