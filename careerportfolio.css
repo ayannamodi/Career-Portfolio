@@ -1,0 +1,269 @@
+/* Color Palette and Font */
+:root {
+    --primary-color: #5d9cec; /* Sky Blue - Vibrant and beautiful */
+    --secondary-color-light: #ebf5ff; /* Lightest Sky Blue for alternating background */
+    --secondary-color-medium: #d8edff; /* Medium Sky Blue for main background */
+    --accent-color: #3f68a5; /* Darker blue for contrast and text */
+    --text-color: #2c3e50; /* Deep blue-gray for readability */
+    --font-family-header: 'Verdana', sans-serif; 
+    --font-family-body: 'Helvetica Neue', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--secondary-color-medium); /* Set main BG to medium blue */
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-header);
+    line-height: 1.2;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Navigation Bar Alignment Fix */
+#navbar {
+    position: sticky;
+    top: 0;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: space-between; /* Separates logo and links */
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 1px 1px 1px #ddd;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 20px; 
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+/* Dynamic highlighting for active link */
+.nav-links a.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 3px;
+    font-weight: 700;
+}
+
+.nav-links a:hover:not(.active) {
+    color: var(--accent-color);
+}
+
+/* FIX 1: Reduced Section Spacing */
+.content-section {
+    padding: 80px 0; /* Reduced from 100px */
+    border-bottom: 1px solid #c8d9e8;
+}
+
+.secondary-bg {
+    background: var(--secondary-color-light); /* Lighter blue for alternating sections */
+}
+
+/* Home/Hero Section */
+#home {
+    min-height: 90vh;
+    padding: 100px 0; /* Reduced from 120px */
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--secondary-color-medium) 0%, #d8edff 100%); 
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Titles */
+.main-title {
+    font-size: 4.5rem;
+    margin-bottom: 5px;
+    color: white; 
+    text-shadow: 2px 2px 0px var(--primary-color), 6px 6px 0px var(--accent-color); 
+}
+
+.sub-title {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 25px; 
+    text-align: left;
+    font-weight: 400;
+}
+
+/* Decorative Icons */
+.decor-icon {
+    position: absolute;
+    width: 150px; 
+    opacity: 0.6;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    z-index: 1;
+}
+
+.icon-top-left {
+    top: -50px;
+    left: -50px;
+    transform: rotate(15deg);
+}
+
+.icon-bottom-right {
+    bottom: -80px;
+    right: -80px;
+    transform: rotate(-30deg);
+}
+
+/* General Box Style */
+.info-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    margin-top: 20px;
+}
+
+/* FIX 2: Research Section Text Alignment/Spacing */
+.research-text {
+    flex: 2;
+}
+
+.research-text ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.research-text li {
+    padding: 5px 0; /* Tightened list spacing */
+    border-bottom: 1px dashed #eee;
+}
+
+/* Experience Cards Fixes */
+.icon-header {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.icon-header img {
+    width: 35px; 
+    height: 35px;
+    margin-right: 15px;
+    filter: drop-shadow(0 0 5px rgba(93, 156, 236, 0.9));
+}
+
+.experience-card {
+    background: white; 
+    padding: 35px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid var(--primary-color);
+    transition: transform 0.3s;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.secondary-bg-card {
+    background: var(--secondary-color-medium);
+    box-shadow: none;
+}
+
+/* Qualifications Section Fixes */
+.qualifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.qual-box {
+    box-shadow: none;
+}
+
+.padded-list {
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.padded-list li {
+    padding: 10px 0; 
+    border-bottom: 1px dashed #eee;
+}
+
+/* Final Reveal Button Text */
+.final-message {
+    margin-top: 15px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+/* Sources Fixes */
+.sources-list {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.sources-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #c8d9e8;
+}
+
+/* Hide the unused reveal box styling elements */
+.reveal-box {
+    display: inline-block;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    opacity: 1; 
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .hero-content .image-box {
+        order: -1;
+    }
+}
