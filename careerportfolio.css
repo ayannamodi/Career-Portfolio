@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 20px;
 }
 
-/* FIX 2: Research Text Layout and Spacing */
+/* Research Section - Text Layout and Graph Sizing Fix */
 .research-text {
     flex: 2;
 }
@@ -170,6 +170,21 @@ h1, h2, h3, h4, h5, h6 {
 .research-text li {
     padding: 5px 0; /* Tightened list spacing */
     border-bottom: 1px dashed #eee;
+}
+
+/* FIX: Control Research Graph Size */
+#research .image-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+#research .image-box img {
+    max-width: 90%; /* Reduced max-width for smaller graph size */
+    height: auto;
+    display: block; 
+    padding: 20px;
 }
 
 /* Experience Cards Fixes */
@@ -209,6 +224,15 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none;
 }
 
+/* FIX: Control Do You Mind Screenshot Size */
+.card-content-grid img {
+    max-width: 150px; /* Reduced max-width for a smaller screenshot */
+    height: auto;
+    border: 3px solid var(--accent-color);
+    border-radius: 8px;
+    object-fit: contain;
+}
+
 /* Qualifications Section Fixes */
 .qualifications-grid {
     display: grid;
@@ -230,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px dashed #eee;
 }
 
-/* Awards Icons Grid Sizing */
+/* Awards Icons Grid Sizing (No change, as this was already fixed) */
 .awards-icons-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -240,20 +264,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .awards-icons-grid img {
-    width: 100%; /* Ensures they fill the grid cell */
-    height: 100px; /* Fixed height for uniform appearance */
-    object-fit: contain; /* Ensures images fit without stretching */
+    width: 100%; 
+    height: 100px; 
+    object-fit: contain; 
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border: 3px solid white;
     transition: transform 0.3s;
-}
-
-/* Research Image (Graph) Sizing */
-#research .image-box img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Ensures consistent sizing */
 }
 
 /* Final Reveal Button Text */
