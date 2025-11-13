@@ -8,6 +8,7 @@
     --font-family-header: 'Verdana', sans-serif;
     --font-family-body: 'Helvetica Neue', sans-serif;
     --glow-shadow-subtle: 0 0 5px rgba(93, 156, 236, 0.4);
+    --cursive-font: 'Dancing Script', cursive; /* For button */
 }
 
 * {
@@ -80,6 +81,89 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links a:hover:not(.active) {
     color: var(--accent-color);
+}
+
+/* FIX: Explore Portfolio Button Styling */
+#explore-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: var(--cursive-font);
+    font-size: 1.8rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+#explore-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* FIX 3: Vertical Progress Bar/Timeline - MOVED TO RIGHT, ADDED ICONS */
+#progress-timeline {
+    position: fixed;
+    top: 25%;
+    /* MOVED TO RIGHT */
+    right: 20px; 
+    left: auto;
+    height: 60vh;
+    width: 5px;
+    z-index: 900;
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 5px;
+    display: none; 
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color); 
+    border-radius: 5px;
+    transition: height 0.3s ease-out;
+    height: 0;
+}
+
+.timeline-dots {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dot-icon {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    
+    /* Center the emoji icon inside */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px; /* Size of the emoji */
+}
+
+.dot-icon.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: scale(1.2) rotate(360deg);
 }
 
 /* Section Spacing */
@@ -281,7 +365,7 @@ img:not(.decor-icon):not(.icon-header img) {
     box-shadow: none;
 }
 
-/* FIX: Do You Mind Screenshot and Book Size (Final increase for landscape) */
+/* Do You Mind Screenshot and Book Size */
 .double-image-grid {
     display: flex;
     flex-direction: column;
@@ -374,6 +458,13 @@ img:not(.decor-icon):not(.icon-header img) {
     opacity: 1;
 }
 
+@media (min-width: 1000px) {
+    /* Show timeline on desktop screens */
+    #progress-timeline {
+        display: block; 
+    }
+}
+
 @media (max-width: 900px) {
     .hero-content {
         flex-direction: column;
@@ -381,5 +472,8 @@ img:not(.decor-icon):not(.icon-header img) {
     }
     .hero-content .image-box {
         order: -1;
+    }
+    .resume-grid {
+        grid-template-columns: 1fr;
     }
 }
