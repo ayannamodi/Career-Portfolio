@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 /* FIX: Home Text Spacing */
 .main-title {
     font-size: 4.5rem;
-    margin-bottom: 0; 
+    margin-bottom: 10px; /* Increased margin for clear separation */
     line-height: 1.1;
     color: white;
     text-shadow: 2px 2px 0px var(--primary-color), 6px 6px 0px var(--accent-color);
@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
 .sub-title {
     font-size: 2.2rem;
     color: var(--accent-color);
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
     text-align: left;
     font-weight: 400;
     line-height: 1.15;
@@ -172,7 +172,7 @@ img:not(.decor-icon):not(.icon-header img) {
 .research-text {
     flex: 2;
 }
-/* FIX: Research Text Spacing */
+/* Research Text Spacing */
 #research h2 {
     margin-bottom: 10px;
 }
@@ -240,10 +240,10 @@ img:not(.decor-icon):not(.icon-header img) {
     box-shadow: none;
 }
 
-/* FIX: Do You Mind Screenshot and Book Size (Adjusted for landscape) */
+/* FIX: Do You Mind Screenshot and Book Size (Final increase for landscape) */
 .double-image-grid {
     display: flex;
-    flex-direction: column; /* Stacked text and images */
+    flex-direction: column;
     gap: 15px;
     align-items: flex-start;
 }
@@ -254,16 +254,17 @@ img:not(.decor-icon):not(.icon-header img) {
     width: 100%;
     justify-content: flex-start;
     padding-top: 15px;
-    align-items: center; /* Vertically align items in the row */
+    align-items: center;
 }
 .screenshot-img {
-    /* Adjusted sizing to ensure the landscape image looks good next to the book cover */
-    max-width: 50%; /* Allow image to take up half of the full container width */
+    /* FINAL INCREASE: Allows the landscape image to be highly visible */
+    max-width: 550px;
     height: auto;
     border: 3px solid var(--accent-color);
     border-radius: 8px;
     object-fit: contain;
 }
+
 
 /* Qualifications Section Fixes */
 .qualifications-grid {
