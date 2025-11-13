@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 5px solid white;
     width: 280px;
     height: 280px;
-    object-fit: cover;
+    object-fit: cover; 
     object-position: center 30%;
 }
 .hero-content .image-box {
@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 /* FIX: Home Text Spacing */
 .main-title {
     font-size: 4.5rem;
-    margin-bottom: 10px; /* Increased margin for clear separation */
+    margin-bottom: 10px; 
     line-height: 1.1;
     color: white;
     text-shadow: 2px 2px 0px var(--primary-color), 6px 6px 0px var(--accent-color);
@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
 .sub-title {
     font-size: 2.2rem;
     color: var(--accent-color);
-    margin-bottom: 15px;
+    margin-bottom: 15px; 
     text-align: left;
     font-weight: 400;
     line-height: 1.15;
@@ -208,6 +208,47 @@ img:not(.decor-icon):not(.icon-header img) {
     border-radius: 10px;
 }
 
+/* New Resume Section Styles */
+.resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1/3 for skills, 2/3 for experience */
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.resume-skills h3 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.resume-experience h3 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.experience-summary-card {
+    background: var(--secondary-color-light);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.experience-summary-card h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: var(--accent-color);
+}
+.experience-summary-card p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
 /* Experience Cards */
 .icon-header {
     display: flex;
@@ -257,7 +298,6 @@ img:not(.decor-icon):not(.icon-header img) {
     align-items: center;
 }
 .screenshot-img {
-    /* FINAL INCREASE: Allows the landscape image to be highly visible */
     max-width: 550px;
     height: auto;
     border: 3px solid var(--accent-color);
