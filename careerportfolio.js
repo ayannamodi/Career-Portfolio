@@ -50,11 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateTimelineProgress() {
         if (!progressLine || !timelineContainer || sections.length === 0) return;
 
-        // Calculate the effective scrollable distance of the entire page content.
-        // We measure from the top of the body down to the bottom of the last element, minus the viewport height.
-        const totalPageHeight = document.body.scrollHeight;
-        const viewportHeight = window.innerHeight;
-        const maxScroll = totalPageHeight - viewportHeight;
+        // CRITICAL FIX: Calculate the maximum scrollable area using document.documentElement.scrollHeight 
+        // to reliably work on GitHub Pages/hosted environments.
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         
         // Calculate the current scroll fraction of the entire page
         let scrollFraction = 0;
@@ -62,12 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollFraction = window.scrollY / maxScroll;
         }
 
-        // We use the scrollFraction to fill the timeline bar from 0% to 100% of the bar's fixed height.
+        // Clamp the fraction between 0 and 1
+        scrollFraction = Math.max(0, Math.min(1, scrollFraction));
+
+        // Set the height of the colored progress line based on the timeline container height
         const totalTimelineHeight = timelineContainer.offsetHeight;
         
-        // We use a slightly adjusted fraction (1.1 multiplier) to ensure the progress bar fills the entire length
-        // because content starts below the top of the page.
-        let adjustedFraction = Math.max(0, Math.min(1, scrollFraction * 1.1)); 
+        // Adjust the fraction slightly to ensure the bar reaches the bottom dot when the user hits the very end.
+        let adjustedFraction = Math.max(0, Math.min(1, scrollFraction)); 
 
         progressLine.style.height = `${adjustedFraction * totalTimelineHeight}px`;
     }
@@ -110,13 +110,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- Event Listeners ---
-    window.addEventListener('scroll', () => {
+    // --- Main Initialization ---
+    // Use the load event for setup to ensure all element positions are finalized before calculation.
+    window.addEventListener('load', () => {
+        // Set up the continuous scroll listener
+        window.addEventListener('scroll', () => {
+            highlightNavAndDotsOnScroll();
+            updateTimelineProgress();
+        });
+        
+        // Run initial calculations
         highlightNavAndDotsOnScroll();
         updateTimelineProgress();
     });
     
-    // Run on initial load to set starting state
+    // Fallback: Run highlight function once DOM is ready (needed for the nav bar and first dot to light up immediately)
     highlightNavAndDotsOnScroll();
-    updateTimelineProgress();
 });
