@@ -157,14 +157,13 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     font-size: 16px; 
-    overflow: visible; /* Must be visible to show text overlay */
+    overflow: visible; 
 }
 
 /* Base style for the title text overlay */
 .dot-icon:before {
     content: attr(title); 
     position: absolute;
-    /* Position text to the LEFT of the dot (since the bar is on the right) */
     right: 40px; 
     color: var(--accent-color);
     background-color: var(--secondary-color-light);
@@ -172,26 +171,25 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 5px;
     font-size: 14px;
     font-weight: 600;
-    opacity: 0; /* Hidden by default */
+    opacity: 0; 
     transition: opacity 0.3s, transform 0.3s;
     pointer-events: none;
     white-space: nowrap;
     z-index: 100;
-    /* Move text slightly out of view when inactive */
     transform: translateX(10px); 
 }
 
-/* FIX: Active dot expansion and text visibility (Subtle change, focuses on text reveal) */
+/* Active dot expansion and text visibility (Subtle change, focuses on text reveal) */
 .dot-icon.active {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    transform: scale(1.1); /* Slight bump up */
+    transform: scale(1.1); 
 }
 
-/* FIX: Text appears and moves into view when active */
+/* Text appears and moves into view when active */
 .dot-icon.active:before {
     opacity: 1; 
-    transform: translateX(0); /* Moves text fully into view */
+    transform: translateX(0); 
     background-color: var(--primary-color);
     color: white;
 }
@@ -282,6 +280,64 @@ img:not(.decor-icon):not(.icon-header img) {
     filter: drop-shadow(0 0 4px rgba(93, 156, 236, 0.3));
 }
 
+/* --- Resume Section Specific Styles --- */
+
+.resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.resume-skills h3, .resume-column h3 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.resume-experience h3 {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.experience-summary-card {
+    background: var(--secondary-color-light);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-summary-card h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: var(--accent-color);
+}
+.experience-summary-card p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+/* Visual Aid Styling */
+.resume-visual-aid {
+    display: block;
+    font-size: 0.85em;
+    font-weight: 700;
+    color: var(--primary-color);
+    background-color: var(--secondary-color-medium);
+    padding: 2px 8px;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: fit-content;
+    border: 1px solid var(--primary-color);
+}
+
+/* --- End Resume Section --- */
+
+
 /* Research Section - Text Layout and Graph Sizing Fix */
 .research-text {
     flex: 2;
@@ -320,47 +376,6 @@ img:not(.decor-icon):not(.icon-header img) {
     display: block;
     padding: 10px;
     border-radius: 10px;
-}
-
-/* New Resume Section Styles */
-.resume-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* 1/3 for skills, 2/3 for experience */
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.resume-skills h3 {
-    margin-top: 0;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-}
-
-.resume-experience h3 {
-    margin-top: 0;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-}
-
-.experience-summary-card {
-    background: var(--secondary-color-light);
-    border-left: 4px solid var(--primary-color);
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-.experience-summary-card h4 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-size: 1.1em;
-    color: var(--accent-color);
-}
-.experience-summary-card p {
-    font-size: 0.9em;
-    line-height: 1.4;
-    margin-bottom: 0;
 }
 
 /* Experience Cards */
