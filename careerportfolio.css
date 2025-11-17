@@ -340,20 +340,23 @@ img:not(.decor-icon):not(.icon-header img) {
     flex-direction: row;
     gap: 20px;
     margin-top: 20px;
-    padding: 15px;
+    padding: 15px 0; /* Padding adjustment */
     border-top: 1px dashed #ccc;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .resume-project-image {
-    max-width: 220px;
+    /* Setting max width for the landscape screenshot */
+    max-width: 65%; 
     height: auto;
     border: 3px solid var(--accent-color);
     border-radius: 8px;
     object-fit: contain;
 }
 .book-cover {
-    max-width: 100px;
+    /* Fixing the small book cover image */
+    max-width: 30%;
 }
 /* --- End Resume Section --- */
 
