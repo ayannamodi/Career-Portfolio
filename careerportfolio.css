@@ -368,14 +368,14 @@ img:not(.decor-icon):not(.icon-header img) {
 }
 
 .screenshot-view {
-    /* Set the width as a percentage of the parent container */
+    /* Responsive width for the landscape screenshot */
     width: 70%;
     height: auto;
-    max-height: 180px; /* Cap height to prevent disproportionate scaling, letting width dictate size */
+    max-height: 180px; /* Cap height to maintain proportionality */
 }
 
 .book-cover-view {
-    /* Set the width/height for the book */
+    /* Proportional size for the tall book cover */
     width: 30%;
     max-width: 140px; 
     height: 180px; 
