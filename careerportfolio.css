@@ -352,10 +352,10 @@ img:not(.decor-icon):not(.icon-header img) {
 }
 
 .resume-project-image {
-    /* Set dimensions for clean layout view */
-    width: 220px; 
-    height: 140px; /* Fixed height for screenshot visibility */
-    object-fit: cover; /* Ensures image fills the space without being too stretched */
+    /* Restore relative sizing that keeps images large and proportionate */
+    width: 200px; 
+    height: auto; 
+    object-fit: cover; 
     border: 3px solid var(--accent-color);
     border-radius: 8px;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -366,9 +366,10 @@ img:not(.decor-icon):not(.icon-header img) {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.book-cover {
-    width: 90px;
-    height: 140px; /* Fixed height for book cover aspect ratio */
+.book-cover-view {
+    /* Adjust specific size of the book image to look like a book */
+    width: 100px;
+    height: 140px; 
     object-fit: contain;
 }
 /* --- End Resume Section --- */
