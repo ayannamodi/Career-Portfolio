@@ -340,25 +340,105 @@ img:not(.decor-icon):not(.icon-header img) {
     flex-direction: row;
     gap: 20px;
     margin-top: 20px;
-    padding: 15px 0; /* Padding adjustment */
+    padding: 15px 0; 
     border-top: 1px dashed #ccc;
     align-items: center;
     justify-content: flex-start;
 }
 
+.visual-link {
+    cursor: pointer;
+    display: block;
+}
+
 .resume-project-image {
-    /* Setting max width for the landscape screenshot */
-    max-width: 65%; 
-    height: auto;
+    /* Set dimensions for clean layout view */
+    width: 220px; 
+    height: 140px; /* Fixed height for screenshot visibility */
+    object-fit: cover; /* Ensures image fills the space without being too stretched */
     border: 3px solid var(--accent-color);
     border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.resume-project-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.book-cover {
+    width: 90px;
+    height: 140px; /* Fixed height for book cover aspect ratio */
     object-fit: contain;
 }
-.book-cover {
-    /* Fixing the small book cover image */
-    max-width: 30%;
-}
 /* --- End Resume Section --- */
+
+/* --- Modal Styles --- */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Target the modal when the hash matches the id */
+.modal-overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 75vh;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--primary-color);
+}
+
+.modal-content p {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* --- End Modal Styles --- */
 
 
 /* Research Section - Text Layout and Graph Sizing Fix */
