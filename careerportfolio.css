@@ -349,12 +349,11 @@ img:not(.decor-icon):not(.icon-header img) {
 .visual-link {
     cursor: pointer;
     display: block;
-    /* Allow link to wrap image */
     width: auto;
 }
 
 .resume-project-image {
-    /* Set max width to give space, but use height: auto to preserve aspect ratio and avoid squishing */
+    /* Base style for clickable images */
     max-width: 100%; 
     height: auto; 
     object-fit: contain; 
@@ -369,17 +368,17 @@ img:not(.decor-icon):not(.icon-header img) {
 }
 
 .screenshot-view {
-    /* The screenshot should take up about 70% of the available space */
+    /* Large size for the landscape screenshot */
     width: 70%;
-    max-width: 350px;
+    max-width: 480px; /* Increased size significantly */
     height: auto;
 }
 
 .book-cover-view {
-    /* The book cover should take up about 30% of the available space and maintain height */
+    /* Fixed size for the tall book cover */
     width: 30%;
-    max-width: 120px;
-    height: 160px; /* Fixed height for book cover aspect ratio */
+    max-width: 140px; /* Increased size */
+    height: 180px; /* Increased size */
     object-fit: contain;
 }
 /* --- End Resume Section --- */
