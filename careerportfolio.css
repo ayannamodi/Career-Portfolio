@@ -342,7 +342,7 @@ img:not(.decor-icon):not(.icon-header img) {
     margin-top: 20px;
     padding: 15px 0; 
     border-top: 1px dashed #ccc;
-    align-items: center;
+    align-items: flex-start; /* Aligns items to the top line */
     justify-content: flex-start;
 }
 
@@ -352,8 +352,8 @@ img:not(.decor-icon):not(.icon-header img) {
 }
 
 .resume-project-image {
-    /* Restore relative sizing that keeps images large and proportionate */
-    width: 200px; 
+    /* Set max width to give space, but use height: auto to preserve aspect ratio and avoid squishing */
+    max-width: 55%; 
     height: auto; 
     object-fit: cover; 
     border: 3px solid var(--accent-color);
@@ -366,9 +366,14 @@ img:not(.decor-icon):not(.icon-header img) {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+.screenshot-view {
+    /* Style for the wide screenshot */
+    max-width: 65%;
+}
+
 .book-cover-view {
-    /* Adjust specific size of the book image to look like a book */
-    width: 100px;
+    /* Style for the tall book cover */
+    max-width: 100px;
     height: 140px; 
     object-fit: contain;
 }
