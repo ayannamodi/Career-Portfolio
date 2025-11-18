@@ -368,15 +368,22 @@ img:not(.decor-icon):not(.icon-header img) {
 }
 
 .screenshot-view {
-    /* MAXIMIZE SIZE: Screenshot should be large and clearly readable */
+    /* FINAL MAXIMIZED SIZE for the landscape screenshot */
     max-width: 650px; 
     max-height: 350px; 
 }
 
 .book-cover-view {
-    /* MAXIMIZE SIZE: Book cover should be large and clearly visible */
+    /* FINAL MAXIMIZED SIZE for the book cover */
     max-width: 200px; 
     height: 350px; /* Match height of screenshot for visual balance */
+    border: none; /* REMOVE THE BLUE BORDER ARTIFACT */
+}
+
+/* Removing the blue border that was wrapping the book cover link */
+.book-cover-view-link {
+    border: none;
+    line-height: 0; /* Prevents border artifact */
 }
 /* --- End Resume Section --- */
 
