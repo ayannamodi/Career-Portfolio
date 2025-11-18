@@ -368,15 +368,15 @@ img:not(.decor-icon):not(.icon-header img) {
 }
 
 .screenshot-view {
-    /* Significantly increased size for the landscape screenshot */
-    max-width: 600px;
-    max-height: 300px; /* Increased height to make text readable */
+    /* MAXIMIZE SIZE: Screenshot should be large and clearly readable */
+    max-width: 650px; 
+    max-height: 350px; 
 }
 
 .book-cover-view {
-    /* Significantly increased size for the book cover */
+    /* MAXIMIZE SIZE: Book cover should be large and clearly visible */
     max-width: 200px; 
-    height: 300px; /* Increased height */
+    height: 350px; /* Match height of screenshot for visual balance */
 }
 /* --- End Resume Section --- */
 
