@@ -377,10 +377,10 @@ img:not(.decor-icon):not(.icon-header img) {
     /* FINAL MAXIMIZED SIZE for the book cover */
     max-width: 200px; 
     height: 350px; /* Match height of screenshot for visual balance */
-    border: none; /* REMOVE THE BLUE BORDER ARTIFACT */
+    border: none; 
 }
 
-/* Removing the blue border that was wrapping the book cover link */
+/* Removing the border that was wrapping the book cover link */
 .book-cover-view-link {
     border: none;
     line-height: 0; /* Prevents border artifact */
