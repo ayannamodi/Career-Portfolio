@@ -369,14 +369,14 @@ img:not(.decor-icon):not(.icon-header img) {
 
 .screenshot-view {
     /* FINAL MAXIMIZED SIZE for the landscape screenshot */
-    max-width: 650px; 
-    max-height: 350px; 
+    max-width: 700px; /* Increased Max Width */
+    max-height: 400px; /* Increased Max Height */
 }
 
 .book-cover-view {
     /* FINAL MAXIMIZED SIZE for the book cover */
-    max-width: 200px; 
-    height: 350px; /* Match height of screenshot for visual balance */
+    max-width: 250px; /* Increased Max Width */
+    height: 400px; /* Match height of screenshot for visual balance */
     border: none; 
 }
 
