@@ -368,15 +368,15 @@ img:not(.decor-icon):not(.icon-header img) {
 }
 
 .screenshot-view {
-    /* Set max width to make the screenshot clearly visible */
-    max-width: 500px;
-    max-height: 180px; 
+    /* Significantly increased size for the landscape screenshot */
+    max-width: 600px;
+    max-height: 250px; 
 }
 
 .book-cover-view {
-    /* Set max width and height for the book cover */
-    max-width: 140px; 
-    height: 180px; 
+    /* Significantly increased size for the book cover */
+    max-width: 180px; 
+    height: 250px; 
 }
 /* --- End Resume Section --- */
 
